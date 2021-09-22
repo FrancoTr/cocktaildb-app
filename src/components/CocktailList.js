@@ -10,6 +10,11 @@ const CocktailList = () => {
     return <Loading />;
   }
 
+  if (cocktails.length < 1) {
+    //no cocktail available matching the search criteria
+    return <h2 className="section-title">No cocktails matched your search criteria</h2>;
+  }
+
   return (
     <div>
       <h2>Cocktail List</h2>
