@@ -5,6 +5,11 @@ const SearchForm = () => {
   const { setSearchTerm } = useGlobalContext();
   const searchValue = React.useRef("");
 
+  React.useEffect(() => {
+    //the moment the App renders, the search bar will have focus
+    searchValue.current.focus();
+  }, []);
+
   const searchCocktail = () => {
     setSearchTerm(searchValue.current.value);
   };
