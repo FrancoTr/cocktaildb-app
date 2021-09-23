@@ -18,9 +18,15 @@ const AppProvider = ({ children }) => {
       if (drinks) {
         const newCocktails = drinks.map((item) => {
           const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } = item;
-          return {id: idDrink, name: strDrink, image: strDrinkThumb, info:strAlcoholic, glass= strGlass}
+          return {
+            id: idDrink,
+            name: strDrink,
+            image: strDrinkThumb,
+            info: strAlcoholic,
+            glass: strGlass,
+          };
         });
-        setCocktails(newCocktails)
+        setCocktails(newCocktails);
       } else {
         setCocktails([]);
       }
