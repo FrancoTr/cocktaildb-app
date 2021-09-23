@@ -23,12 +23,13 @@ const SingleCocktail = () => {
             strCategory: category,
             strGlass: glass,
             strInstructions: instructions,
-            strIngredient1: ingredient1,
-            strIngredient2: ingredient2,
-            strIngredient3: ingredient3,
-            strIngredient4: ingredient4,
-            strIngredient5: ingredient5,
+            ingredient1,
+            ingredient2,
+            ingredient3,
+            ingredient4,
+            ingredient5,
           } = data.drinks[0];
+          const ingredients = [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5];
         } else {
           setCocktail(null);
         }
