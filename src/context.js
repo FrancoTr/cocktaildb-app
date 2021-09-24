@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState([]);
 
-  const fetchDrinks = async () => {
+  const fetchDrinks = useCallback(async () => {
     setLoading(true); //when we start fetching data, the loading animation must be shown
     try {
       const response = await fetch(`${url}${searchTerm}`);
@@ -35,7 +35,7 @@ const AppProvider = ({ children }) => {
       console.log(error);
       setLoading(false);
     }
-  };
+  }, [searchTerm, fetchDrinks()]);
 
   useEffect(() => {
     fetchDrinks();
