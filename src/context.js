@@ -35,18 +35,18 @@ const AppProvider = ({ children }) => {
       console.log(error);
       setLoading(false);
     }
-  }, [searchTerm, fetchDrinks()]);
+  }, [searchTerm]);
 
   useEffect(() => {
     fetchDrinks();
-  }, [searchTerm]); //every time the search term changes
+  }, [searchTerm, fetchDrinks]); //every time the search term changes
 
   return (
     <AppContext.Provider
       value={{
         loading,
-        searchTerm,
         cocktails,
+        searchTerm,
         setSearchTerm,
       }}
     >
